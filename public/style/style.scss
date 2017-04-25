@@ -1,0 +1,451 @@
+.w3-whale-blue-l5 {color:#000 !important; background-color:#f5faff !important}
+.w3-whale-blue-l4 {color:#000 !important; background-color:#ddefff !important}
+.w3-whale-blue-l3 {color:#000 !important; background-color:#bce0ff !important}
+.w3-whale-blue-l2 {color:#000 !important; background-color:#9ad0ff !important}
+.w3-whale-blue-l1 {color:#000 !important; background-color:#78c0ff !important}
+.w3-whale-blue-d1 {color:#fff !important; background-color:#35a1ff !important}
+.w3-whale-blue-d2 {color:#fff !important; background-color:#1291ff !important}
+.w3-whale-blue-d3 {color:#fff !important; background-color:#0080ef !important}
+.w3-whale-blue-d4 {color:#fff !important; background-color:#006dcd !important}
+.w3-whale-blue-d5 {color:#fff !important; background-color:#005bab !important}
+
+.w3-whale-blue-light {color:#000 !important; background-color:#f5faff !important}
+.w3-whale-blue-dark {color:#fff !important; background-color:#005bab !important}
+.w3-whale-blue-action {color:#fff !important; background-color:#005bab !important}
+
+.w3-whale-blue {color:#fff !important; background-color:#57b0ff !important}
+.w3-text-whale-blue {color:#57b0ff !important}
+.w3-border-whale-blue {border-color:#57b0ff !important}
+
+.w3-hover-whale-blue:hover {color:#fff !important; background-color:#57b0ff !important}
+.w3-hover-text-whale-blue {color:#57b0ff !important}
+.w3-hover-border-whale-blue:hover {border-color:#57b0ff !important}
+
+.glow {
+    box-shadow: 0px 0px 20px #5dbdf0 !important;
+}
+
+.glow-hover:hover {
+    box-shadow: 0px 0px 10px #5dbdf0 !important;
+}
+
+.glow-hover:active {
+    box-shadow: 0px 0px 20px #5dbdf0 !important;
+}
+
+$nav-bar-height: 120px;
+$nav-bar-height-small: 80px;
+$body-min-width: 472px;
+
+body {
+    min-width: $body-min-width;
+    background-color: #ddefff;
+}
+
+section[data-role="push-up"] {
+    div[data-role="header"] {
+        position: sticky;
+        top: calc(#{$nav-bar-height} - 1px);
+        z-index: 100;
+        margin: 0px;
+
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+}
+
+.toggle {
+    display: initial;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.width-80 {
+    width: 80%;
+}
+
+.toggle-enlarge {
+    font-size: 1em;
+}
+
+.toggle-not {
+    display: none;
+}
+
+nav[data-role="top-nav"].small .toggle-enlarge {
+    font-size: 1.25em;
+}
+
+.no-vertical-margin {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.margin-header {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+.event-card {
+    display: inline-block;
+    width: 250px;
+    box-sizing: border-box;
+    margin: 10px;
+    padding-bottom: 10px;
+
+    div.event-profile {
+        height: 150px;
+        width: calc(100% + 2*16px);
+        position: relative;
+        left: -16px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+}
+
+nav[data-role="top-nav"].small {
+    height: $nav-bar-height-small;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    img[alt="logo"] {
+        height: calc(#{$nav-bar-height-small} * 0.923);
+
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+}
+
+nav[data-role="top-nav"] {
+    height: $nav-bar-height;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    min-width: $body-min-width;
+    z-index: 1000;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    img[alt="logo"] {
+        height: calc(#{$nav-bar-height} * 0.923);
+
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    div[data-role="name"] {
+        position: relative;
+        left: -10px;
+        span:first-child {
+            margin-right: 3px;
+            font-weight: bold;
+        }
+        span:first-child + span {
+            font-weight: 100;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+    div[data-role="right-menu"] {
+        position: absolute;
+        right: 20px;
+    }
+}
+
+.w3-button-action {
+    color:#fff !important;
+    background-color:#0080ef !important;
+}
+
+.w3-button:hover {
+    color:#fff !important;
+    background-color:#005bab !important;
+}
+
+//https://wifi.ais.co.th/?fwd=http://captive.apple.com/hotspot-detect.html%3f
+
+.calendar-contianer {
+    height: calc(700px);
+    background: rgba(255, 255, 255, 1);
+    min-width: 470px;
+    width: 80%;
+    margin: auto;
+    padding: 0px 15px;
+}
+
+@media all and (max-width: 768px) {
+    .calendar-contianer {
+        width: 100%;
+    }
+    .toggle {
+        display: none;
+    }
+    .toggle-not {
+        display: initial;
+    }
+    .toggle-enlarge {
+        font-size: 1.45em;
+    }
+    nav[data-role="top-nav"] {
+        height: $nav-bar-height-small;
+
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        img[alt="logo"] {
+            height: calc(#{$nav-bar-height-small} * 0.923);
+
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .toggle-enlarge {
+            font-size: 1.25em;
+        }
+    }
+}
+
+.profile-menu-inactive {
+    display: none;
+    position: absolute;
+}
+
+.profile-menu-inactive * {
+    display: none;
+}
+
+.profile-menu-active::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #FFF;
+    position: relative;
+    top: -34px;
+    left: 135px;
+    animation: dissoveIn 0.1s ease-in-out;
+}
+
+.profile-menu-active {
+    position: absolute;
+    width: 170px;
+    height: 185px;
+    top: 100px;
+    right: 20px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    animation: dissoveIn 0.1s ease-in-out;
+}
+
+.profile-modal {
+    color: #000;
+    text-align: center;
+
+    img[alt="profile-img"] {
+        height: 70px;
+        width: 70px;
+        display: block;
+        margin: 0px auto;
+    }
+    a {
+        text-decoration: none;
+        color: #688ed2;
+    }
+    a:hover {
+        color: #99aeff;
+    }
+}
+
+.rbc-toolbar button {
+    border-radius: 0px !important;
+}
+
+$button-height: 30px;
+$button-width: 120px;
+
+button[alt="fb-login"]::before {
+    position: absolute;
+    width: $button-width;
+    height: $button-height;
+    background-color: #FFF;
+    opacity: 0;
+    content: ""
+}
+button[alt="fb-login"]:hover::before {
+    opacity: 0.2;
+}
+
+button[alt="fb-login"] {
+    height: $button-height;
+    width: $button-width;
+    padding: 0px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #688ed2;
+    display: flex;
+    align-items: center;
+
+    div[alt="fb-icon-container"] {
+        display: inline-block;
+        height: $button-height;
+        width: $button-height;
+        display: flex;
+        background-color: #3c57a0;
+
+        img[alt="fb-icon"] {
+            height: calc(0.7 * #{$button-height});
+            width: calc(0.7 * #{$button-height});
+            margin: auto;
+        }
+    }
+
+    div[alt="fb-icon-container"] + div {
+        flex: 1;
+        display: inline-block;
+        width: calc(100% - #{$button-height});
+        font-size: 12px;
+        color: #FFF;
+        //background-color: #3c57a0; //#688ed2;
+    }
+}
+
+.rbc-toolbar {
+    height: 100px;
+    width: calc(100% + 2*15px);
+    position: relative;
+    left: -15px;
+    padding: 15px;
+    background-color: #bce0ff;
+    margin-bottom: 0px !important;
+
+    .rbc-toolbar-label::before {
+        content: " ";
+        width: 100%;
+        position: relative;
+    }
+    .rbc-toolbar-label {
+        position: relative;
+    }
+
+    .rbc-btn-group {
+        button {
+            background-color: #ddefff;
+            border: none;
+            margin: 0px 2px;
+        }
+        button:hover {
+            background-color: #bce0ff;
+        }
+        button:active,
+        button.rbc-active {
+            background-color: #9ad0ff;
+        }
+    }
+}
+
+.rbc-row {
+    .rbc-header {
+        padding: 10px 0px;
+    }
+}
+
+.rbc-row-bg {
+    .rbc-today {
+        background-color: #EFE !important;
+    }
+}
+
+.rbc-time-view {
+    .rbc-time-header {
+        .rbc-row:nth-child(2) {
+            .rbc-allday-cell {
+                background-color: #EFE !important;
+            }
+        }
+    }
+}
+
+// .rbc-today {
+//     background-color: #eaf6ff !important;
+// }
+
+.rbc-month-view {
+    .rbc-month-header::before {
+        content: " ";
+        background-color: #F1F1F1;
+        width: 20px;
+        left: -15px;
+        top: 0px;
+        height: 40px;
+        position: absolute;
+    }
+    .rbc-month-header::after {
+        content: " ";
+        background-color: #F1F1F1;
+        width: 20px;
+        right: -15px;
+        top: 0px;
+        height: 40px;
+        position: absolute;
+    }
+    .rbc-month-header {
+        padding: 0px;
+        background-color: #F1F1F1 !important;
+    }
+    * {
+        border: none !important;
+    }
+
+    .rbc-date-cell {
+        text-align: center;
+        padding-right: 0px !important;
+    }
+
+    .rbc-row-bg {
+        .rbc-day-bg:first-child:not(.rbc-today){
+            background-color: #FDD;
+        }
+    }
+
+    border: none !important;
+}
