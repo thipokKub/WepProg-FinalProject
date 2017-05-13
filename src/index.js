@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -13,7 +14,7 @@ import thunk from 'redux-thunk';
 
 import './index.css';
 
-let DEBUG = true;
+let DEBUG = false;
 let middlewares = [DEBUG && logger, thunk].filter(Boolean);
 
 const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);

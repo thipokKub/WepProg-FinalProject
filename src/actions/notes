@@ -1,0 +1,116 @@
+Event data structure //Always private
+====================
+"eid" : {
+    "meta": { //quick access
+        "name": __(String)__,
+        "date": {
+            "isInterval": __(bool)__,
+            "start": __(timestamp)__,
+            "end": __(timestamp__
+        },
+        "time": __(string)__,
+        "image": __(string)__,
+        "location": __(string)__,
+        "color": __(String - hex)__,
+        "tags": {
+            "tag": true, //__(String)__: true
+            ...
+        }
+    }
+    "Author": __(uid)__,
+    "description": {
+        0: {
+            "type": "text",
+            "content": __(string)__ //paragraph text
+        },
+        1: {
+            "type": "image",
+            "content": __(string)__ //image src
+        },
+        2: {
+            "type": "image-carousel",
+            "content": [
+                __(string)__
+            ]
+        },
+        3: {
+            "type": "video",
+            "content": __(string)__ //youtube embed link
+        },
+        4: {
+            type: "section-breaker",
+            content: __(string)__ //heaser
+        }
+        ...
+    },
+    "Joined": {
+        __(uid)__: true,
+        __(uid)__: true,
+        ...
+    },
+    "Pending": {
+        __(uid)__: true,
+        __(uid)__: true,
+        ...
+    },
+    "Rejected": {
+        __(uid)__: true,
+        __(uid)__: true,
+        ...
+    }
+}
+
+Users_map - public read for mapping
+=============
+"fid": {
+    "fid": __(fid)__,
+    "uid": __(uid)__,
+}
+
+User - partially public and private
+=============
+"uid": {
+    "meta": { //public read but private write
+        "uid": __(String)__,
+        "username": __(String)__,
+        "fid": __(String)__,
+        "image": __(String)__,
+    },
+    "public": { //public read and write
+        "eventRquested": {
+            "eid": true,
+            ...
+        }
+    }
+    "private": { //Always private
+        facebook : {
+            "fid": __(String)__,
+            "name": __(String)__,
+            "image": __(String)__,
+            "email": __(String)__
+            "friendsList" : {
+                "fid": {
+                    "name": __(String)__,
+                    "fid": __(String)__
+                },
+                "fid": {
+                    "name": __(String)__,
+                    "fid": __(String)__
+                },
+                ...
+            }
+        },
+        eventJoined : {
+            "eid": true,
+            ...
+        },
+        eventRejected : {
+            "eid": true,
+            ...
+        },
+        eventAuthor : {
+            "eid": true,
+            ...
+        }
+    }
+}

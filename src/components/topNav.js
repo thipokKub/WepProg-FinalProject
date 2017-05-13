@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import logo from'../../public/images/logo4.png';
 import { Link } from 'react-router';
@@ -11,7 +12,7 @@ class TopNav extends Component {
             'isFire': false
         }
 
-        $(window).bind('scroll', (e) => {
+        $(window).bind('scroll resize', (e) => {
             var distanceY = window.pageYOffset || document.documentElement.scrollTop;
             var shrinkOn = 125;
             var offSet = 25;
@@ -57,7 +58,7 @@ class TopNav extends Component {
     }
 
     componentWillUnmount() {
-        $(window).unbind('scroll');
+        $(window).unbind('scroll resize');
     }
 
     onToggleProfile() {
@@ -69,6 +70,8 @@ class TopNav extends Component {
     }
 
     render() {
+        const facebook = this.props.facebook;
+
         if($('.tags-menu-active').length !== 0 || $('.profile-menu-active').length !== 0) {
             $('.profile-menu-active').removeClass('profile-menu-active').addClass('profile-menu-inactive');
         }
@@ -127,6 +130,31 @@ class TopNav extends Component {
             }
         }
 
+        if(!this.props.isFacebookLogin) renderedList.splice(1, 2);
+
+        const profile = (!this.props.isFacebookLogin) ? (
+            <div>
+                <img src="http://www.rayennersawardwinners.com/images/gallery/dummy_profpic.jpg" alt="profile-img" />
+                <p>
+                    <button alt="fb-login" onClick={this.props.facebookLogin}>
+                        <div alt="fb-icon-container">
+                            <img src="../../images/fb_icon.svg" alt="fb-icon" />
+                        </div>
+                        <div>
+                            Connect
+                        </div>
+                    </button>
+                </p>
+            </div>
+        ) : (
+            <div>
+                <img src={this.props.facebook.result.user.providerData[0].photoURL} alt="profile-img" />
+                <p>
+                    {this.props.facebook.result.user.providerData[0].displayName}
+                </p>
+            </div>
+        );
+
         return (
             <nav data-role="top-nav" className="w3-whale-blue">
                 <Link to="/">
@@ -141,22 +169,14 @@ class TopNav extends Component {
                         {renderedList.map((item) => item)}
                     </div>
                 </div>
-                <div className="profile-menu-inactive">
+                <div className="profile-menu-inactive" style={{'height': (!this.props.facebookLogin) ? '160px' : 'initial' }}>
                     <div className="w3-container profile-modal">
-                        <img src="http://www.rayennersawardwinners.com/images/gallery/dummy_profpic.jpg" alt="profile-img" />
-                        <p>
-                            <button alt="fb-login">
-                                <div alt="fb-icon-container">
-                                    <img src="../../images/fb_icon.svg" alt="fb-icon" />
-                                </div>
-                                <div>
-                                    Connect
-                                </div>
-                            </button>
-                        </p>
-                        <Link to="profile" style={{'position': 'relative', 'top': '-10px'}}>
-                            View Profile
-                        </Link>
+                        {profile}
+                        {(this.props.isFacebookLogin) ?
+                            (<Link to="profile" style={{'position': 'relative', 'top': '-10px'}}>
+                                View Profile
+                            </Link>) : null
+                        }
                     </div>
                 </div>
             </nav>

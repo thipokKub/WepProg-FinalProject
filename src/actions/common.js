@@ -1,5 +1,29 @@
 import _ from 'lodash';
 
+export function addIterateObject(objectToAdd, array) {
+    if(array.constructor === Array) {
+        for(let i = 0; i < array.length; i++) {
+            objectToAdd[i] = array[i];
+        }
+    }
+    return objectToAdd;
+}
+
+export function addIterateObjectPair(objectToAdd, array, options) {
+    if(array.constructor === Array && typeof(options) !== 'undefined') {
+        if(options.isSingleValue) {
+            for(let i = 0; i < array.length; i++) {
+                objectToAdd[array[i]] = options.singleValue;
+            }
+        } else if(options.arrayValue && options.arrayValue.constructor === Array && options.arrayValue.length === array.length) {
+            for(let i = 0; i < array.length; i++) {
+                objectToAdd[array[i]] = options.arrayValue[i];
+            }
+        }
+    }
+    return objectToAdd;
+}
+
 export function fillDigits(seed, digits) {
     let rStr = "";
     let uNum = seed%(Math.pow(10, digits));
@@ -24,31 +48,32 @@ export function generateStr(prefix, suffix, randomInsert) {
         secondPart = ("000" + secondPart.toString(36)).slice(-3);
 
         var mod = "";
+        var i;
 
-        for(var i = 0; i < firstPart.length; i++) {
-            mod += ((parseInt((Math.random())*100)%2) === 0) ? firstPart[i] : _.toUpper(firstPart[i]);
+        for(i = 0; i < firstPart.length; i++) {
+            mod += ((parseInt((Math.random())*100, 10)%2) === 0) ? firstPart[i] : _.toUpper(firstPart[i]);
         }
 
-        for(var i = 0; i < secondPart.length; i++) {
-            mod += ((parseInt((Math.random())*100)%2) === 0) ? secondPart[i] : _.toUpper(secondPart[i]);
+        for(i = 0; i < secondPart.length; i++) {
+            mod += ((parseInt((Math.random())*100, 10)%2) === 0) ? secondPart[i] : _.toUpper(secondPart[i]);
         }
 
         return mod;
     }
 
-    var hasCode = function(str) {
-        var hash = 0, i, chr;
-        if (str.length === 0) return hash;
-        for (i = 0; i < str.length; i++) {
-            chr   = str.charCodeAt(i);
-            hash  = ((hash << 5) - hash) + chr;
-            hash |= 0; // Convert to 32bit integer
-        }
-        return hash;
-    }
+    // var hasCode = function(str) {
+    //     var hash = 0, i, chr;
+    //     if (str.length === 0) return hash;
+    //     for (i = 0; i < str.length; i++) {
+    //         chr   = str.charCodeAt(i);
+    //         hash  = ((hash << 5) - hash) + chr;
+    //         hash |= 0; // Convert to 32bit integer
+    //     }
+    //     return hash;
+    // }
 
     let returnString = tmp() + tmp();
-    const randomPos = parseInt(Math.random()*returnString.length);
+    const randomPos = parseInt(Math.random()*returnString.length, 10);
     returnString = (typeof(randomInsert) === "string") ? (returnString.slice(0, randomPos) + randomInsert + returnString.slice(randomPos, returnString.length)) : returnString;
     returnString = ((typeof(prefix) === "string") ? prefix : "") + returnString + ((typeof(suffix) === "string") ? suffix : "");
 

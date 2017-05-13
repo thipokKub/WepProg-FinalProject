@@ -33,6 +33,15 @@
     box-shadow: 0px 0px 20px #5dbdf0 !important;
 }
 
+.display-none {
+    display: none;
+}
+
+span.my-label {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
 $nav-bar-height: 120px;
 $nav-bar-height-small: 80px;
 $body-min-width: 472px;
@@ -274,6 +283,38 @@ nav[data-role="top-nav"] {
     background-color: #FFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     animation: dissoveIn 0.1s ease-in-out;
+}
+
+.table-info {
+    width: 100%;
+}
+
+.table-info tr {
+    td {
+        display: inline-block;
+        text-align: left;
+        width: calc( (100% - 20px) / 2 );
+    }
+    td:first-child {
+        text-align: right;
+        padding-right: 10px;
+    }
+    td:nth-child(2) {
+        text-align: center;
+        padding-right: 10px;
+        width: 20px !important;
+    }
+    td:nth-child(3) {
+        display: inline-block;
+        word-break: break-all;
+        word-wrap: break-word;
+        white-space: wrap;
+    }
+}
+
+.my-modal {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .profile-modal {

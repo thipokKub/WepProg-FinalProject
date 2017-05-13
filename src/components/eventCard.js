@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
 // import { Link } from 'react-router';
 import $ from 'jquery';
@@ -45,11 +47,7 @@ EventCard.defaultProps = {
         end: "date end"
     },
     location: "location",
-    image: "something",
-    joined: {
-        total: 0,
-        who: []
-    }
+    image: "something"
 }
 
 export default EventCard;

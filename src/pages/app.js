@@ -11,14 +11,22 @@ class App extends Component {
     handleClick(e, targetElement) {
         if(targetElement[0] === e.target) {
             this.props.toggle_modal();
-            if(this.props.page.is_modal_shown) $('div.w3-modal').fadeIn(200);
-            else $('div.w3-modal').fadeOut(200);
+            if(this.props.page.is_modal_shown) {
+                $('div.w3-modal').fadeIn(200);
+            }
+            else {
+                $('div.w3-modal').fadeOut(200);
+            }
         }
     }
 
     componentDidMount() {
-        if(this.props.page.is_modal_shown) $('div.w3-modal').fadeIn(200);
-        else $('div.w3-modal').fadeOut(200);
+        if(this.props.page.is_modal_shown) {
+            $('div.w3-modal').fadeIn(200);
+        }
+        else {
+            $('div.w3-modal').fadeOut(200);
+        }
     }
 
     componentWillMount() {
@@ -27,9 +35,11 @@ class App extends Component {
     render() {
         return (
             <section id="App">
-                {this.props.children}
+                <div id="Content-body">
+                    {this.props.children}
+                </div>
                 <div className="w3-modal" style={{'display': 'block', 'zIndex': '1500', 'width': '100%'}} onClick={(e) => { this.handleClick(e, $('div.w3-modal')); }}>
-                    <div className="w3-modal-content" style={{'position': 'absolute', 'top': '150px', 'width': '80%', 'left': '50%', 'transform': 'translateX(-50%)', 'marginBottom': '50px'}}>
+                    <div className="w3-modal-content my-modal">
                         {this.props.page.modal_element}
                     </div>
                 </div>
